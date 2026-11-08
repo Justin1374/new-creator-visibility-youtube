@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+
+# OS generated files (macOS)
+.DS_Store
+
+# Environment variables (best practice)
+.env
+
+# Jupyter Notebook checkpoints (If used later)
+.ipynb_checkpoints/
+
+# VS Code workspace settings
+.vscode/
