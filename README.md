@@ -3,12 +3,12 @@
 ## 1. Project Overview and Reference to DEL02.1
 This repository contains the Initial Computational Prototype for Deliverable 2. It simulates a simplified YouTube Home page recommendation feed to explore differences in visibility between new and established creators under different popularity weighting conditions.
 
-**For the full project rationale, representation explanation, interpretation of the outputs, and next steps, please refer to the DEL02.1 Initial Computational Prototype Report (located in `docs/DEL02_1_Report.pdf`).** The report explains why these specific agents and rules were chosen and what the results do (and do not) mean for actual platform behaviour.
+**For the full project rationale, representation explanation and interpretation of the outputs, refer to the DEL02.1 Initial Computational Prototype Report (located in `docs/DEL02.1_Initial_Computational_Prototype_Report.md`).** The report explains why these specific agents and rules were chosen and what the results do (and do not) mean for actual platform behaviour.
 
 ## 2. Model Locations
 
-* **Preserved Mesa Example:** We used the **Civil Violence** model as our provisional Mesa analogy. The complete, unchanged source code for this example is preserved in `src/civil_violence/`. The `SOURCE.md` file in that folder contains the original URL and attribution.
-* **Adapted Project Model:** The targeted slice of our simulation is located in `src/project_model/`. It contains `model.py` (the agent and model logic) and `run.py` (the execution script).
+* **Preserved Mesa Example:** Used the **Civil Violence** model as the provisional Mesa analogy. The complete, unchanged source code for this example is preserved in `src/civil_violence/`. The `SOURCE.md` file in that folder contains the original URL and attribution.
+* **Adapted Project Model:** The targeted slice of the simulation is located in `src/project_model/`. It contains `model.py` (the agent and model logic) and `run.py` (the execution script).
 
 ## 3. Software Requirements & Installation
 

@@ -43,8 +43,8 @@
 
 * **Source example:** Epstein Civil Violence
 * **Current run:** The adapted model ranks fictional creators for a limited number of recommendation slots by combining an abstracted viewer interest score with existing creator popularity. It compares a baseline run with a low popularity weight (0.1) against an alternative run with a high popularity weight (0.9) to measure the percentage of slots occupied by new creators over 50 rounds.
-* **Repository URL:** [Insert GitHub repository URL]
-* **DEL02 Release URL:** [Insert GitHub DEL02 Release URL]
+* **Repository URL:** [GitHub repository URL](https://github.com/Justin1374/new-creator-visibility-youtube)
+* **DEL02 Release URL:** [GitHub DEL02 Release URL]
 
 ## §4 Repository outputs: descriptions and comparison
 
