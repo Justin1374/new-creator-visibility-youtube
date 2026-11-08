@@ -13,7 +13,7 @@ This repository contains the Initial Computational Prototype for Deliverable 2. 
 ## 3. Software Requirements & Installation
 
 This project requires Python 3.9+ and the following packages (listed in `requirements.txt`):
-* `mesa`
+* `mesa Version 3.3.1`
 * `pandas`
 * `matplotlib`
 
