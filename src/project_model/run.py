@@ -15,7 +15,7 @@ def run_and_save_condition(weight, condition_name, steps=50):
     data = model.datacollector.get_model_vars_dataframe()
     
     # Define the exact output paths pointing to the main outputs/ folder
-    csv_filename = f"outputs/{condition_name}_processed_00_visibility_by_round.csv"
+    csv_filename = f"outputs/{condition_name}_raw_00_visibility_by_round.csv"
     png_filename = f"outputs/{condition_name}_processed_00_visibility_by_round.png"
     
     # Export CSV
