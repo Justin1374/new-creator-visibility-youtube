@@ -1,0 +1,31 @@
+Section,Parameter,Value,Description,Status / Notes
+Agent population,Total creators,100,"The run script uses the model default of 100 creator agents.",Synthetic model input
+Agent population,New creators,50,"Every even-indexed creator is initialized as new; with 100 creators this produces 50 new creators.",Synthetic initialization
+Agent population,Established creators,50,"Every odd-indexed creator is initialized as established; with 100 creators this produces 50 established creators.",Synthetic initialization
+Agent population,New creator initial popularity,0.05–0.20,"Each new creator's initial popularity is drawn uniformly from [0.05, 0.20] using the model's seeded random generator.",Synthetic initialization
+Agent population,Established creator initial popularity,0.70–1.00,"Each established creator's initial popularity is drawn uniformly from [0.70, 1.00] using the model's seeded random generator.",Synthetic initialization
+Agent population,Creator topics,"Tech; Gaming; Education; Lifestyle; Music","Creator topics are assigned cyclically across the five topics. With 100 creators, each topic has 20 creators: 10 new and 10 established.",Synthetic initialization
+Agent population,Initial creator impressions,0,"Each creator's total_impressions counter starts at zero.",Implementation-defined initial condition
+Agent population,Initial creator engagements,0,"Each creator's total_engagements counter starts at zero.",Implementation-defined initial condition
+Agent population,Total viewers,200,"The run script uses the model default of 200 viewer agents.",Synthetic model input
+Agent population,Viewer topics,"Tech; Gaming; Education; Lifestyle; Music","Viewer primary topics are assigned cyclically across the five topics.",Synthetic initialization
+Agent population,Viewers per topic,40,"With 200 viewers assigned cyclically across five topics, each topic has 40 viewers.",Synthetic initialization
+Agent population,Viewer preference structure,One static primary topic per viewer,"Each viewer has one preferred_topic; the preference is not updated during the simulation.",Synthetic simplification
+Recommendation process,Active viewers per round,1,"One viewer is selected randomly from the viewer agents each round; selection is with replacement, so a viewer may be selected again in later rounds.",Model rule
+Recommendation process,Candidate creators per round,100,"All creator agents are scored as candidates in each round.",Model configuration
+Recommendation process,Home-page recommendation slots (K),10,"The highest-scoring 10 creators are selected for the recommendation slate in each round.",Model configuration / interface abstraction
+Recommendation process,Simulation rounds (T),50,"run.py executes 50 model steps for each primary run and each robustness-sweep run.",Model configuration
+Ranking rule,Ranking score,"S_i(t) = w_pop × p_i(t) + (1 − w_pop) × I_i(t)","Creator popularity and viewer interest are combined using the condition-specific popularity weight.",Simplified model rule; not YouTube's proprietary ranking algorithm
+Ranking rule,Baseline popularity weight (w_pop),0.10,"run.py sets weight=0.10; popularity contributes 10% and viewer interest contributes 90%.",Baseline comparison condition
+Ranking rule,Alternative popularity weight (w_pop),0.90,"run.py sets weight=0.90; popularity contributes 90% and viewer interest contributes 10%.",Alternative comparison condition
+Ranking rule,Interest score when topics match,0.65–1.00,"For each creator candidate whose topic matches the active viewer, interest is drawn uniformly from [0.65, 1.00].",Synthetic modelling choice
+Ranking rule,Interest score when topics do not match,0.00–0.35,"For each creator candidate whose topic does not match the active viewer, interest is drawn uniformly from [0.00, 0.35].",Synthetic modelling choice
+Engagement and popularity,Engagement probability when topics match,0.65,"Each recommended creator with a topic matching the active viewer's preference has a 0.65 probability of engagement.",Synthetic modelling choice
+Engagement and popularity,Engagement probability when topics do not match,0.10,"Each recommended creator with a topic not matching the active viewer's preference has a 0.10 probability of engagement.",Synthetic modelling choice
+Engagement and popularity,Popularity gain after realized engagement,+0.03,"A creator that receives engagement gains 0.03 popularity during its update for that round.",Synthetic modelling choice
+Engagement and popularity,Popularity update order,"Engagement gain, then decay","For an engaged creator, the +0.03 gain is applied first and capped at 1.00; then the -0.002 decay is applied. Creators without engagement still receive the decay.",Implemented update sequence
+Engagement and popularity,Baseline popularity decay per round,-0.002,"Every creator loses 0.002 popularity on every round, whether or not it was recommended or engaged.",Synthetic modelling choice
+Engagement and popularity,Minimum popularity,0.01,"After the decay is applied, popularity is floored at 0.01.",Implemented lower-bound constraint
+Engagement and popularity,Maximum popularity during gain update,1.00,"The engagement gain is capped at 1.00 before the round's decay is applied; therefore 1.00 is not necessarily the end-of-round maximum.",Implemented upper-bound constraint
+Reproducibility,Primary run seed,42,"run.py uses seed=42 for both the baseline and alternative primary comparison runs.",Reproducibility setting
+Reproducibility,Robustness sweep seeds,0–19,"run.py runs both conditions once for each seed from 0 through 19, producing 20 runs per condition (40 runs total).",Reproducibility setting
