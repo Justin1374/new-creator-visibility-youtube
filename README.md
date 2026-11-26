@@ -13,7 +13,7 @@ The ranking rule is `S_i(t) = w_pop * p_i(t) + (1 - w_pop) * I_i(t)`. In each of
 
 **DEL03 changes from DEL02:** The model now includes 200 explicit `ViewerAgent` entities distributed across five topics (Tech, Gaming, Education, Lifestyle, and Music); topic-based interest scores and engagement probabilities; popularity gains only when engagement occurs; gradual popularity decay; additional measures for topic match, engagement, and unique creator reach; and reproducible random seeds. The primary comparison uses seed `42`, with an additional 20-seed robustness sweep using seeds `0–19`.
 
-The model is a bounded, synthetic representation of selected Home-page recommendation dynamics. It does not reproduce YouTube's proprietary ranking algorithm or use real YouTube user, creator, clickstream, or watch-time data. For the full inquiry rationale, evidence basis, ecosystem map, modelling assumptions, comparison, and interpretation.
+The model is a bounded, synthetic representation of selected Home-page recommendation dynamics. It does not reproduce YouTube's proprietary ranking algorithm or use real YouTube user, creator, clickstream, or watch-time data.
 
 ## 2. Repository Contents and Model Locations
 
