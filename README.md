@@ -31,6 +31,25 @@ The model is a bounded, synthetic representation of selected Home-page recommend
   - `del03_comparison_summary_distribution.png` — comparison of new-creator slot share, viewer topic match rate, and realized viewer engagement rate across the 20 seeds.
 - **Preserved DEL02 outputs:** The original DEL02 reference outputs remain unchanged in `outputs/`: `baseline_raw_00_visibility_by_round.csv`, `baseline_processed_00_visibility_by_round.png`, `alternative_raw_00_visibility_by_round.csv`, and `alternative_processed_00_visibility_by_round.png`.
 
+## 3. Software Requirements & Installation
+
+This project requires Python 3.11.9+ and the following packages (listed in `requirements.txt`):
+* `mesa Version 3.3.1`
+* `pandas`
+* `matplotlib`
+
+**Installation Steps:**
+1. Open your terminal and navigate to the root directory of this repository.
+2. (Optional but recommended) Create and activate a virtual environment. Do this by navigating to the project root folder, then run python -m venv venv. (Note: If python doesn't work, try python3 -m venv venv)
+3. Install the required dependencies by running:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## 4. How To Run
+1. Open a command prompt or terminal and navigate to the main folder of the project (the folder that contains src/, outputs/, and README.md).
+2. Install dependencies if you haven't already. Make sure your virtual environment (if used) is activated, then install the required packages by doing: pip install mesa pandas matplotlib.
+3. Execute the run script by pointing to its location inside the src folder. From the root directory, run the following command: python src/project_model/run.py
 
 
 **Verification:**
